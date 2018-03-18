@@ -16,4 +16,8 @@ public class CarOffer {
     public void setCar(Car car) {
         this.car = car;
     }
-}
+
+    @Override
+    public String toString() {
+        return String.format("This is our offer %s and the purchase price is %d, as for the rental it's %d", car, purchasePrice, rentalPrice);
+    }}

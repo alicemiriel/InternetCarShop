@@ -11,7 +11,8 @@ public class Car {
     private LocalDate productionDate;
     private boolean automatic;
 
-    public Car(CarBrand marka, String name, CarType type, double combustion, double engineSize, int numberOfSeats, int enginePower, int productionDate, boolean automatic) {
+    public Car(CarBrand marka, String name, CarType type, double combustion, double engineSize, int numberOfSeats,
+               int enginePower, LocalDate productionDate, boolean automatic) {
         this.marka = marka;
         this.name = name;
         this.type = type;
@@ -96,4 +97,8 @@ public class Car {
     }
 //-(*)napęd na przód/tył (wymyśl jak to zrobić)
 
+    @Override
+    public String toString() {
+        return marka.toString();
+    }
 }

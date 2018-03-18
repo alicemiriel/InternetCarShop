@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class CarShop {
     private String name;
-    private CarOffer carOffer;
+    private List<CarOffer> carOffers;
 
-    public CarShop(String name, CarOffer carOffer) {
+    public CarShop(String name) {
         this.name = name;
-        this.carOffer = carOffer;
+        this.carOffers = new ArrayList<>();
     }
 
     public String getName() {
@@ -15,11 +19,12 @@ public class CarShop {
         this.name = name;
     }
 
-    public CarOffer getCarOffer() {
-        return carOffer;
+    @Override
+    public String toString() {
+        return String.format("Welcome to shope named %s,  our offers are as presetented %s", name, carOffers.toString());
     }
 
-    public void setCarOffer(CarOffer carOffer) {
-        this.carOffer = carOffer;
+    public void carOffersAdd(CarOffer... carOffer) {
+        carOffers.addAll((Arrays.asList(carOffer)));
     }
 }
