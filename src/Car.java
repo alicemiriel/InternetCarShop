@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class Car {
-    private CarBrand marka;
+    private CarBrand mark;
     private String name;
     private CarType type;
     private double combustion;
@@ -10,10 +10,11 @@ public class Car {
     private int enginePower;
     private LocalDate productionDate;
     private boolean automatic;
+    private CarDrive drive;
 
     public Car(CarBrand marka, String name, CarType type, double combustion, double engineSize, int numberOfSeats,
-               int enginePower, LocalDate productionDate, boolean automatic) {
-        this.marka = marka;
+               int enginePower, LocalDate productionDate, boolean automatic, CarDrive drive) {
+        this.mark = marka;
         this.name = name;
         this.type = type;
         this.combustion = combustion;
@@ -22,14 +23,15 @@ public class Car {
         this.enginePower = enginePower;
         this.productionDate = productionDate;
         this.automatic = automatic;
+        this.drive = drive;
     }
 
-    public CarBrand getMarka() {
-        return marka;
+    public CarBrand getMark() {
+        return mark;
     }
 
-    public void setMarka(CarBrand marka) {
-        this.marka = marka;
+    public void setMark(CarBrand mark) {
+        this.mark = mark;
     }
 
     public String getName() {
@@ -95,10 +97,17 @@ public class Car {
     public void setAutomatic(boolean automatic) {
         this.automatic = automatic;
     }
-//-(*)napęd na przód/tył (wymyśl jak to zrobić)
+
+    public CarDrive getDrive() {
+        return drive;
+    }
+
+    public void setDrive(CarDrive drive) {
+        this.drive = drive;
+    }
 
     @Override
     public String toString() {
-        return marka.toString();
+        return mark.toString() +" " + name;
     }
 }
