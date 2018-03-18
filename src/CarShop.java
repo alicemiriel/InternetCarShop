@@ -45,4 +45,23 @@ public class CarShop {
     public void carOffersAdd(CarOffer... carOffer) {
         carOffers.addAll((Arrays.asList(carOffer)));
     }
+    public List<Car> showCarsBasedOnYourYear(int yourYear){
+        return getCarOffers().stream()
+                .map(CarOffer::getCar)
+                .filter(car -> car.getProductionDate().getYear()>=yourYear)
+                .collect(Collectors.toList());
+    }
+    public List<Car> showCarsBasedOnBrands(CarBrand carBrand){
+        return getCarOffers().stream()
+                .map(CarOffer::getCar)
+                .filter(car -> car.getMark().equals(carBrand))
+                .collect(Collectors.toList());
+    }
+
+    public List<Car> sortCarsBasedOnCombustion(){
+        return getCarOffers().stream()
+                .map(CarOffer::getCar)
+                .sorted((o1, o2) -> (int) (o1.getCombustion() - o2.getCombustion()))
+                .collect(Collectors.toList());
+    }
 }
