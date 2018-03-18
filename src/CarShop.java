@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CarShop {
@@ -64,4 +61,37 @@ public class CarShop {
                 .sorted((o1, o2) -> (int) (o1.getCombustion() - o2.getCombustion()))
                 .collect(Collectors.toList());
     }
+    public List<Car> sortCarsBasedOnEngineower(){
+        return getCarOffers().stream()
+                .map(CarOffer::getCar)
+                .sorted((o1, o2) -> (int) (o1.getEnginePower() - o2.getEnginePower()))
+                .collect(Collectors.toList());
+    }
+
+    public List<CarOffer> sortCarsBasedOnPrice(){
+        return getCarOffers().stream()
+                .sorted((o1, o2) -> (o1.getPurchasePrice() - o2.getPurchasePrice()))
+                .collect(Collectors.toList());
+    }
+
+    public List<CarOffer> sortBasedOnCheapestRenatlPrice(){
+        return getCarOffers().stream()
+                .sorted(((o1, o2) -> o2.getRentalPrice()-o1.getRentalPrice()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Car> getAllCars(){
+        return getCarOffers().stream()
+                .map(CarOffer::getCar)
+                .collect(Collectors.toList());
+    }
+    public List<Car> getCheapestCarsforBestEnginePower(){
+        Comparator<CarOffer> comparator = Comparator.comparing(carOffer -> carOffer.getCar().getEnginePower());
+        comparator = comparator.thenComparing(Comparator.comparing(CarOffer::getPurchasePrice).reversed());
+        return getCarOffers().stream()
+                .sorted(comparator)
+                .map(CarOffer::getCar)
+                .collect(Collectors.toList());
+    }
+
 }

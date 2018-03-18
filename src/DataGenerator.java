@@ -45,7 +45,7 @@ public class DataGenerator {
                 new CarOffer(new Car(CarBrand.FORD, "car14", CarType.SUV, 13.5, 3,
                         1, 18, LocalDate.of(2015, 12, 13), true, CarDrive.BOTH), 789451000, 1500),
                 new CarOffer(new Car(CarBrand.HYUNDAI, "car15", CarType.CABRIO, 12.1, 4,
-                        4, 25, LocalDate.of(2010, 12, 13), true, CarDrive.BACK), 19697000, 500)
+                        4, 25, LocalDate.of(2010, 12, 12), true, CarDrive.BACK), 19697000, 500)
         ));
     }
 

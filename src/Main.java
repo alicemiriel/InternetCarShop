@@ -30,5 +30,10 @@ public class Main {
         System.out.println(myLittleCarShop.showCarsBasedOnBrands(brand));
 
         System.out.println(myLittleCarShop.sortCarsBasedOnCombustion());
+        System.out.println(myLittleCarShop.sortCarsBasedOnPrice());
+        System.out.println(myLittleCarShop.sortBasedOnCheapestRenatlPrice());
+        System.out.println(myLittleCarShop.getAllCars());
+        System.out.println(myLittleCarShop.getCheapestCarsforBestEnginePower());
+
     }
 }

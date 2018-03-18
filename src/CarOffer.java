@@ -19,5 +19,22 @@ public class CarOffer {
 
     @Override
     public String toString() {
-        return String.format("This is our offer %s and the purchase price is %d, as for the rental it's %d", car, purchasePrice, rentalPrice);
-    }}
+        return String.format("Car %s you can purchase it fo %d, and rent for %d", car, purchasePrice, rentalPrice);
+    }
+
+    public int getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(int purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+    public int getRentalPrice() {
+        return rentalPrice;
+    }
+
+    public void setRentalPrice(int rentalPrice) {
+        this.rentalPrice = rentalPrice;
+    }
+}
